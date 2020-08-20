@@ -34,4 +34,8 @@ RSpec.describe MovieResult do
 
     expect(@result.top_cast).to eq(cast)
   end
+
+  it 'has total review count', :vcr do
+    expect(@result.reviews_count).to eq(20)
+  end
 end
