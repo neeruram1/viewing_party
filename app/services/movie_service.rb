@@ -3,6 +3,18 @@ class MovieService
     to_json('discover/movie')
   end
 
+  def cast(movie_id)
+    to_json("movie/#{movie_id}/credits")
+  end
+
+  def reviews(movie_id)
+    to_json("movie/#{movie_id}/reviews")
+  end
+
+  def movie_details(movie_id)
+    to_json("movie/#{movie_id}")
+  end
+
   private
 
   def to_json(url)
