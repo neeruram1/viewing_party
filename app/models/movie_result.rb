@@ -17,5 +17,7 @@ class MovieResult
     top_10_cast
   end
 
-
+  def reviews_count
+    @reviews.size
+  end
 end
