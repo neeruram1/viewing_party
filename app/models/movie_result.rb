@@ -9,4 +9,13 @@ class MovieResult
     @reviews = data[:reviews]
     @vote_average = data[:vote_average]
   end
+  def top_cast
+    top_10_cast = {}
+    @cast.first(10).each do |cast_member|
+      top_10_cast[cast_member[:name]] = cast_member[:character]
+    end
+    top_10_cast
+  end
+
+
 end
