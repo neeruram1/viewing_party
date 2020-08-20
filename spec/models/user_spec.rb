@@ -4,7 +4,7 @@ RSpec.describe User, type: :model do
   describe 'Validations' do
     it {should validate_presence_of :name}
     it {should validate_presence_of :email}
-    it {should validate_presence_of :user_name}
+    it {should validate_presence_of :uid}
   end
 
   describe 'Relationships' do

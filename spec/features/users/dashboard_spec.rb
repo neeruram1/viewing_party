@@ -2,12 +2,15 @@ require 'rails_helper'
 
 RSpec.describe 'User dashboard page' do
   before :each do
-    @neeru = User.create(name: "Neeru Ram", email: "neeru@turing.io", user_name: "movie_girl85")
-    visit '/dashboard'
+    OmniAuth.config.mock_auth[:google_oauth2]
+    visit '/'
+    click_on 'Login with Google'
+    @user = User.last
   end
 
   it "I see a welcome message" do
-    expect(page).to have_content("Welcome (PLACEHOLDER)!")
+    expect(current_path).to eq('/dashboard')
+    expect(page).to have_content("Welcome #{@user.name}!")
   end
 
   it "I see a button to Discover Movies" do

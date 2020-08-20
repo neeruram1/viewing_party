@@ -17,6 +17,7 @@ gem 'bootsnap'
 gem 'jbuilder', '~> 2.5'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'faraday', '~> 1.0', '>= 1.0.1'
+gem 'omniauth-google-oauth2', '~> 0.8.0'
 
 group :development, :test do
   gem 'pry'

@@ -1,7 +1,8 @@
 class ViewParty < ApplicationRecord
-  validates_presence_of :duration,
-                        :date
-  belongs_to :host, class_name: "User"
-  has_many :view_party_attendees
+  validates :duration, presence: true
+  validates :date, presence: true
+
+  belongs_to :host, class_name: 'User'
+  has_many :view_party_attendees, dependent: :destroy
   has_many :users, through: :view_party_attendees
 end

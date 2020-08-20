@@ -18,3 +18,5 @@
 
 # Ignore test coverage
 /coverage/*
+
+/config/application.yml

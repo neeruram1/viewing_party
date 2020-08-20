@@ -5,15 +5,12 @@
 # pusher_secret: abdc3b896a0ffb85d373
 # stripe_api_key: sk_test_2J0l093xOyW72XUYJHE4Dv2r
 # stripe_publishable_key: pk_test_ro9jV5SNwGb1yYlQfzG17LHK
-MOVIE_API: "b4fbcf4d435e94a935aa089b7a3cfcf7"
+
+MOVIE_API: "b4fbcf4d435e94a935aa089b7a3cfccf7"
 movie_api_read_access_token: eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiNGZiY2Y0ZDQzNWU5NGE5MzVhYTA4OWI3YTNjZmNmNyIsInN1YiI6IjVmM2IzMDMxMWZiOTRmMDAzNmFiZDBhNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.wO-TXqn2T4lrASIzDKNq3mMGKduV4sYGzSRTA__v3ag
-#
-# production:
-#   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
-#   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
-
-
+GOOGLE_CLIENT_ID: "532324550252-ha0cc6t9n9g7d07g947o467n279d81129.apps.googleusercontent.com"
+GOOGLE_CLIENT_SECRET: "NK8baUof0iK6XHavEAUhkoo2w"
 
 # Ex req: https://api.themoviedb.org/3/movie/550?4a935aa089api_key=b4fbcf4d435e9b7a3cfcf7
 

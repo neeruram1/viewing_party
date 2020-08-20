@@ -1,5 +1,5 @@
 class Movie < ApplicationRecord
-  validates_presence_of :name,
-                        :duration
+  validates :name, presence: true
+  validates :duration, presence: true
   belongs_to :view_party
 end
