@@ -19,4 +19,19 @@ RSpec.describe MovieResult do
     expect(@result.reviews).to eq(@data[:reviews])
     expect(@result.vote_average).to eq(@data[:vote_average])
   end
+
+  it 'can list the first 10 cast members with their character', :vcr do
+    cast = {"Robert Downey Jr."=>"Tony Stark / Iron Man",
+            "Chris Hemsworth"=>"Thor Odinson",
+            "Chris Evans"=>"Steve Rogers / Captain America",
+            "Scarlett Johansson"=>"Natasha Romanoff / Black Widow",
+            "Benedict Cumberbatch"=>"Stephen Strange / Doctor Strange",
+            "Tom Holland"=>"Peter Parker / Spider-Man",
+            "Chadwick Boseman"=>"T'Challa / Black Panther",
+            "Don Cheadle"=>"James \"Rhodey\" Rhodes / War Machine",
+            "Zoe Saldana"=>"Gamora",
+            "Karen Gillan"=>"Nebula"}
+
+    expect(@result.top_cast).to eq(cast)
+  end
 end
