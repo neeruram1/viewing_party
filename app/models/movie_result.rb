@@ -1,5 +1,6 @@
 class MovieResult
   attr_reader :title, :genres, :runtime, :summary, :cast, :reviews, :vote_average
+
   def initialize(data)
     @title = data[:title]
     @genres = data[:genres]
@@ -9,6 +10,7 @@ class MovieResult
     @reviews = data[:reviews]
     @vote_average = data[:vote_average]
   end
+
   def top_cast
     top_10_cast = {}
     @cast.first(10).each do |cast_member|

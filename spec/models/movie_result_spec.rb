@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe MovieResult do
   before :each do
-    # data = File.open('/fixtures/movie_results.json', 'r')
     @data = MovieData.all_movie_att('299536')
     @result = MovieResult.new(@data)
   end
