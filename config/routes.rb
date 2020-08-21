@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'sessions#create'
   resources :movies, only: [:show, :index]
   resources :view_party, only: [:new, :create]
+  resources :friendship, only: [:create]
 end
