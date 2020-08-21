@@ -9,11 +9,16 @@
     <%= submit_tag 'Add Friend' %>
   <% end %>
   <br>
-  <h3>My Friends</h3>
-    <% current_user.friends.each do |friend| %>
-      <h4>Name: <%= friend.name %></h4>
-      <p>Email: <%= friend.email %></p>
+
+  <% if current_user.friends.empty? == false %>
+    <h3>My Friends</h3>
+      <% current_user.friends.each do |friend| %>
+        <h4>Name: <%= friend.name %></h4>
+        <p>Email: <%= friend.email %></p>
       <% end %>
+  <% else %>
+    <h3>You currently have no friends</h3>
+  <% end %>
 </section>
 
 <section class='viewing-parties'>
