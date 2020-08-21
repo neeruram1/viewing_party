@@ -7,7 +7,7 @@ RSpec.describe 'movie show page' do
 
       visit "/movies/#{id}"
 
-      expect(page).to have_button('Add Viewing Party for Movie')
+      expect(page).to have_link('Add Viewing Party for Movie')
 
       click_on 'Add Viewing Party for Movie'
 
