@@ -16,6 +16,11 @@ class MovieData
     }
   end
 
+  def self.movie_search_results(search_query)
+    data = self.search(search_query)
+    data[:results].first(40)
+  end
+
   private
 
   def self.all_movies
@@ -32,5 +37,9 @@ class MovieData
 
   def self.movie_cast(movie_id)
     MovieService.new.cast(movie_id)
+  end
+
+  def self.search(search_query)
+    MovieService.new.search(search_query)
   end
 end

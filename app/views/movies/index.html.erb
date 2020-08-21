@@ -4,3 +4,12 @@
   <%= search_field_tag :search, "Search by movie title" %>
   <%= submit_tag "Find Movies" %>
 <% end %>
+
+<% if @movie_results.nil? == false %>
+  <section class='search-results'>
+    <% @movie_results.each do |movie| %>
+      <p>Title: <%= movie[:title] %></p>
+      <p>Vote Average: <%= movie[:vote_average] %></p>
+    <% end %>
+  </section>
+<% end %>
