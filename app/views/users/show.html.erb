@@ -1,24 +1,21 @@
-<h1>Welcome <%= @user.name %>!</h1>
+<h1>Welcome <%= current_user.name %>!</h1>
 
 <%= button_to "Discover Movies", "/discover", method: :get %>
 
 <section class='friends'>
-  <h3>Friends</h3>
+  <h2>Friends</h2>
   <%= form_tag "/friendship" do %>
     <%= text_field_tag :email, "What's their email?" %>
     <%= submit_tag 'Add Friend' %>
   <% end %>
   <br>
-  <h4>My Friends</h4>
-  <ul>
-    <li><% @user.friends do |friend| %>
-      <% require 'pry'; binding.pry %>
-      <p>Name: <%= friend.name %></p>
+  <h3>My Friends</h3>
+    <% current_user.friends.each do |friend| %>
+      <h4>Name: <%= friend.name %></h4>
       <p>Email: <%= friend.email %></p>
       <% end %>
-  </ul>
 </section>
 
 <section class='viewing-parties'>
-  <h3>Viewing Parties</h3>
+  <h2>Viewing Parties</h2>
 </section>
