@@ -1,0 +1,6 @@
+
+<section class="top-rated">
+  <% @movie_results.each do |movie| %>
+    <p><%= link_to movie[:title], "/movies/#{movie[:id]}" %></p>
+  <% end %>
+</section>

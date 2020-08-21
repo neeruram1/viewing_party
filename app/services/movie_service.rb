@@ -15,6 +15,10 @@ class MovieService
     to_json("movie/#{movie_id}")
   end
 
+  def toprated
+    to_json('movie/top_rated')
+  end
+
   private
 
   def to_json(url)

@@ -1,22 +1,23 @@
 class MovieData
-  # private
   def self.all_movie_att(movie_id)
-    data = self.movie_details(movie_id)
-    cast = self.movie_cast(movie_id)
-    reviews = self.movie_reviews(movie_id)
+    data = movie_details(movie_id)
+    cast = movie_cast(movie_id)
+    reviews = movie_reviews(movie_id)
     {
-        summary: data[:overview],
-        title: data[:title],
-        runtime: data[:runtime],
-        genres: data[:genres],
-        reviews: reviews[:results],
-        cast: cast[:cast],
-        vote_average: data[:vote_average]
+      summary: data[:overview],
+      title: data[:title],
+      runtime: data[:runtime],
+      genres: data[:genres],
+      reviews: reviews[:results],
+      cast: cast[:cast],
+      vote_average: data[:vote_average]
 
     }
   end
 
-  private
+  def self.top_20_rated_movies
+    top_rated[:results].first(20)
+  end
 
   def self.all_movies
     MovieService.new.movies
@@ -32,5 +33,9 @@ class MovieData
 
   def self.movie_cast(movie_id)
     MovieService.new.cast(movie_id)
+  end
+
+  def self.top_rated
+    MovieService.new.toprated
   end
 end
