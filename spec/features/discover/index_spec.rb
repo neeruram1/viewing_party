@@ -10,6 +10,8 @@ RSpec.describe 'Discover Page' do
   end
 
   it "I see a text field to enter a keyword(s) to search by movie title" do
-    find_button 'Find Movie'
+    fill_in :search, with: 'Avengers'
+    click_on 'Find Movie'
+    expect(current_path).to eq('/movies')
   end
 end
