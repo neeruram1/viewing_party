@@ -1,6 +1,6 @@
 
 
-<%= button_to  "Add Viewing Party for Movie", new_view_party_path, method: :get %>
+<%= link_to  "Add Viewing Party for Movie", "/view_party/new?q=#{@movie_result.id}", method: :get %>
 
  <h4>Title:</h4>
   <p><%= @movie_result.title %></p>
