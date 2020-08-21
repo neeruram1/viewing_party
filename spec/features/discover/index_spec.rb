@@ -9,8 +9,10 @@ RSpec.describe 'Discover Page' do
     expect(page).to have_link('Find Top Rated Movies')
   end
 
-  it "I see a text field to enter a keyword(s) to search by movie title" do
-    find_button 'Find Movie'
+  it "I see a text field to enter a keyword(s) to search by movie title", :vcr do
+    fill_in :search, with: 'Avengers'
+    click_on 'Find Movie'
+    expect(current_path).to eq('/movies')
   end
 
   it 'I see to 20 rated movies', :vcr do
