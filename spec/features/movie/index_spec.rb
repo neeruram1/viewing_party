@@ -20,7 +20,7 @@ RSpec.describe 'Movies index page' do
     expect(current_path).to eq('/movies')
 
     within '.search-results' do
-      expect(page).to have_content("Title: Avengers: Infinity War")
+      expect(page).to have_content("Avengers: Infinity War")
       expect(page).to have_content("Vote Average: 8.3")
     end
   end
