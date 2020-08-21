@@ -10,7 +10,8 @@ class MovieData
       genres: data[:genres],
       reviews: reviews[:results],
       cast: cast[:cast],
-      vote_average: data[:vote_average]
+      vote_average: data[:vote_average],
+      id: data[:id]
 
     }
   end
