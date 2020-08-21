@@ -3,6 +3,7 @@ class MoviesController < ApplicationController
     if params[:search].nil? == false
       @movie_results = MovieData.movie_search_results(params[:search])
     end
+    return @movie_results = MovieData.top_20_rated_movies if params[:q]
   end
 
   def show

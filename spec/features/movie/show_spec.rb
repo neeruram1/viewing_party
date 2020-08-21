@@ -19,7 +19,6 @@ RSpec.describe 'movie show page' do
     result = MovieResult.new(MovieData.all_movie_att(id))
 
     visit "/movies/#{id}"
-    save_and_open_page
 
     expect(page).to have_content(result.title)
     expect(page).to have_content(result.vote_average)

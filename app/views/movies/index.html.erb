@@ -6,9 +6,9 @@
 <% end %>
 
 <% if @movie_results.nil? == false %>
-  <section class='search-results'>
+  <section class='search-results top-rated'>
     <% @movie_results.each do |movie| %>
-      <p>Title: <%= movie[:title] %></p>
+      <p><%= link_to movie[:title], "/movies/#{movie[:id]}" %></p>
       <p>Vote Average: <%= movie[:vote_average] %></p>
     <% end %>
   </section>

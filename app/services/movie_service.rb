@@ -19,6 +19,10 @@ class MovieService
     to_json("search/movie?query=#{search}")
   end
 
+  def toprated
+    to_json('movie/top_rated')
+  end
+
   private
 
   def to_json(url)
