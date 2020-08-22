@@ -17,6 +17,7 @@ RSpec.describe MovieResult do
     expect(@result.cast).to eq(@data[:cast])
     expect(@result.reviews).to eq(@data[:reviews])
     expect(@result.vote_average).to eq(@data[:vote_average])
+    expect(@result.id).to eq(@data[:id])
   end
 
   it 'can list the first 10 cast members with their character', :vcr do

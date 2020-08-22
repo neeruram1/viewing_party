@@ -3,6 +3,6 @@
 
 
 <%= form_tag '/movies', method: :get do %>
-  <%= search_field_tag :search, "Search by movie title" %>
+  <%= search_field_tag :search,nil, placeholder: "Search by movie title" %>
   <%= submit_tag "Find Movies" %>
 <% end %>

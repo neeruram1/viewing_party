@@ -1,6 +1,8 @@
+<h2><span>Movie Title: </span><%= @movie_result.title %></h2>
+
 <%= form_tag view_party_index_path do %>
-  <%= label_tag :duration, "Movie Time" %>
-  <%= text_field_tag :duration %>
+  <%= label_tag :duration, "Duration of Party in minutes" %>
+  <%= text_field_tag :duration, "#{@movie_result.runtime}" %>
   <br>
   <br>
   <%= label_tag :date, "When" %>

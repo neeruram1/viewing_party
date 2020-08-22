@@ -1,5 +1,5 @@
 class MovieResult
-  attr_reader :title, :genres, :runtime, :summary, :cast, :reviews, :vote_average
+  attr_reader :title, :genres, :runtime, :summary, :cast, :reviews, :vote_average, :id
 
   def initialize(data)
     @title = data[:title]
@@ -9,6 +9,7 @@ class MovieResult
     @cast = data[:cast]
     @reviews = data[:reviews]
     @vote_average = data[:vote_average]
+    @id = data[:id]
   end
 
   def top_cast
