@@ -20,8 +20,8 @@
 
  <section class='characters'>
    <h4>Actors & Characters:</h4>
-   <% @movie.top_cast.each_pair do |name, character| %>
-    <p>Actor/Actress: <%= name %> Character: <%= character %></p>
+   <% @movie.top_cast.each do |cast| %>
+    <p>Actor/Actress: <%= cast[:name] %> Character: <%= cast[:character] %></p>
   <% end %>
  </section>
 
