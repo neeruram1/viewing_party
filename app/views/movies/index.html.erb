@@ -8,7 +8,7 @@
 <% if @movies %>
   <section class='search-results top-rated'>
     <% if @movies.empty? %>
-      <h3> There was no match to the movie entered.</h3>
+      <h3> No movies found with that keyword.</h3>
     <% else %>
       <% @movies.each do |movie| %>
         <p><%= link_to movie.title, "/movies/#{movie.id}" %></p>

@@ -37,4 +37,12 @@ RSpec.describe 'Movies index page' do
 
     expect(current_path).to eq("/movies/#{id}")
   end
+
+  it "I see an message if there are no search results", :vcr do
+    visit '/movies'
+
+    fill_in :search, with: "alksjdfl;kajsdf;lkajsdf;l"
+    click_button 'Find Movies'
+    expect(page).to have_content("No movies found with that keyword.")
+  end
 end
