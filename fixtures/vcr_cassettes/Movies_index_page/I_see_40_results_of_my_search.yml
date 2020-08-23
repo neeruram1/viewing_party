@@ -40,13 +40,13 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 e7ff4a714a3b1f464db9c76ee954a565.cloudfront.net (CloudFront)
+      - 1.1 788f6ff13e09a712f5227945fa34a519.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - CjvTmx1HEI3UUGKCbzV-KIAKnPQZS-Ozg0055nDgxYYvZ3xK93aMfg==
+      - Tbftq4Rc7hcI2XYyHX9GTQ3iWFkeKDCWFTTfEc_-yNbvpVvQWAMgEQ==
     body:
       encoding: ASCII-8BIT
       string: !binary |-
