@@ -23,5 +23,11 @@
 
 <section class='viewing-parties'>
   <h2>Viewing Parties</h2>
-  <%=  %>
+  <% if current_user.parties_hosting.nil? == false %>
+  <% current_user.parties_hosting.each do |party| %>
+    <%= party.movie.name %>
+  <% else %>
+    <p>You have no viewing parties!</p>
+    <% end %>
+  <% end %>
 </section>

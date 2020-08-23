@@ -5,7 +5,7 @@ class ViewPartyController < ApplicationController
   end
 
   def create
-    movie = Movie.create(movie_params)
+    movie = Movie.create(name: params[:movie_name], duration: params[:duration], api_id: params[:movie_id])
     party = ViewParty.create(duration: params[:duration], date: params[:date], host: current_user, movie: movie)
     friends = []
     params[:friend_ids].values.flatten.each do |id|
@@ -17,11 +17,5 @@ class ViewPartyController < ApplicationController
 
     redirect_to '/dashboard'
     flash[:message] = 'You have created a new Viewing Party!'
-  end
-
-  private
-
-  def movie_params
-    params.permit(params[:movie_name], params[:duration], params[:movie_id])
   end
 end
