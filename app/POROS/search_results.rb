@@ -16,4 +16,17 @@ class SearchResults
     end
     movies.first(40)
   end
+
+  def movie_details(movie_id)
+    json = MovieService.new.movie_data(movie_id)
+    MovieResult.new(json)
+  end
+
+  def cast(movie_id)
+    json = MovieService.new.cast(movie_id)
+  end
+
+  def reviews(movie_id)
+    json = MovieService.new.reviews(movie_id)
+  end
 end
