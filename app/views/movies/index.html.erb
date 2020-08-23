@@ -5,14 +5,14 @@
   <%= submit_tag "Find Movies" %>
 <% end %>
 
-<% if @movie_results %>
+<% if @movies %>
   <section class='search-results top-rated'>
-    <% if @movie_results.empty? %>
+    <% if @movies.empty? %>
       <h3> There was no match to the movie entered.</h3>
     <% else %>
-      <% @movie_results.each do |movie| %>
-        <p><%= link_to movie[:title], "/movies/#{movie[:id]}" %></p>
-        <p>Vote Average: <%= movie[:vote_average] %></p>
+      <% @movies.each do |movie| %>
+        <p><%= link_to movie.title, "/movies/#{movie.id}" %></p>
+        <p>Vote Average: <%= movie.vote_average %></p>
       <% end %>
     <% end %>
   </section>

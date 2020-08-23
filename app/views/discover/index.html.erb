@@ -1,7 +1,6 @@
 <%= link_to "Find Top Rated Movies","/movies?q=toprated", method: :get %>
 <br>
 
-
 <%= form_tag '/movies', method: :get do %>
   <%= search_field_tag :search,nil, placeholder: "Search by movie title" %>
   <%= submit_tag "Find Movies" %>
