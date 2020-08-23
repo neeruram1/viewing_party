@@ -20,4 +20,8 @@ class User < ApplicationRecord
     user.save!
     user
   end
+
+  def parties_hosting
+    ViewParty.where(host_id: id)
+  end
 end

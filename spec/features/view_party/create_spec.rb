@@ -39,5 +39,6 @@ RSpec.describe 'Create Party' do
     expect(current_path).to eq('/dashboard')
 
     expect(page).to have_content('You have created a new Viewing Party!')
+    expect(page).to have_content(party.movie.name)
   end
 end
