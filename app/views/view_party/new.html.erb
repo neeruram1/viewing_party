@@ -1,13 +1,23 @@
-<h2><span>Movie Title: </span><%= @movie_result.title %></h2>
+<h1>Viewing Party Details:</h1>
+<h2><span>Movie Title: </span><%= @movie.title %></h2>
 
 <%= form_tag view_party_index_path do %>
   <%= label_tag :duration, "Duration of Party in minutes" %>
-  <%= text_field_tag :duration, "#{@movie_result.runtime}" %>
+  <%= text_field_tag :duration, "#{@movie.runtime}" %>
   <br>
   <br>
   <%= label_tag :date, "When" %>
   <%= date_field_tag :date %>
   <br>
   <br>
+  <p>Friends</p>
+  <% if current_user.friends.empty? == false %>
+    <% current_user.friends.each do |friend| %>
+      <%= label_tag :friend, friend.name %>
+      <%= check_box_tag :friend %>
+    <% end %>
+  <% else %>
+    <p>You currently have no friends</p>
+  <% end %>
   <%= submit_tag "Create Party" %>
 <% end %>
