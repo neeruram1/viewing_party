@@ -16,7 +16,7 @@ class MovieResult
   end
 
   def top_cast
-    cast = SearchResults.new.cast(@id)
+    cast = search.cast(@id)
     top_cast = cast[:cast].first(10)
   end
 
@@ -33,7 +33,13 @@ class MovieResult
   end
 
   def reviews
-    reviews = SearchResults.new.reviews(@id)
+    reviews = search.reviews(@id)
     reviews[:results]
+  end
+
+  private
+
+  def search
+    SearchResults.new
   end
 end
