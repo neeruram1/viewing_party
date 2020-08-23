@@ -8,21 +8,7 @@ RSpec.describe 'Create Party' do
     @user = User.last
   end
 
-  it 'has a form', :vcr do
-    visit new_view_party_path
-
-    find_field :duration
-    find_field :date
-
-    find_button 'Create Party'
-  end
-
-  it "If I don't have any friends to add I see a message", :vcr do
-    visit new_view_party_path
-    expect(page).to have_content("You currently have no friends")
-  end
-
-  it 'has details', :vcr do
+  it 'I can create a viewing party', :vcr do
     friend = User.create(uid: "111111", name: "Neeru Ram", email: "neeru@turing.io")
     Friendship.create(user: @user, friend: friend)
     friend2 = User.create(uid: "11134211", name: "Kwibe", email: "kwibe@turing.io")
@@ -36,12 +22,22 @@ RSpec.describe 'Create Party' do
 
     click_on 'Add Viewing Party for Movie'
 
-    expect(current_path).to eq("/view_party/new")
-
     expect(page).to have_content('Avengers: Infinity War')
-    expect(find_field(:duration).value).to eq('149')
 
     expect(page).to have_content(friend.name)
     expect(page).to have_content(friend2.name)
+
+    fill_in :date, with: "10/20/2020"
+
+    check('Neeru Ram')
+    check('Kwibe')
+
+    click_on 'Create Party'
+
+    party = ViewParty.last
+
+    expect(current_path).to eq('/dashboard')
+
+    expect(page).to have_content('You have created a new Viewing Party!')
   end
 end

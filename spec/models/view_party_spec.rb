@@ -10,5 +10,6 @@ RSpec.describe ViewParty, type: :model do
     it {should belong_to :host}
     it {should have_many :view_party_attendees}
     it {should have_many(:users).through(:view_party_attendees)}
+    it {should belong_to :movie}
   end
 end
