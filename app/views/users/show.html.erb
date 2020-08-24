@@ -27,9 +27,13 @@
     <p>You have no viewing parties!</p>
   <% else %>
     <% @user.all_parties.each do |party| %>
-      <%= party.movie.name %>
-      <br>
-      <%= party.date %>
+      <p>Movie: <%= party.movie.name %>
+      <p>Date: <%= party.date %>
+      <% if @user.parties_hosting.include?(party) %>
+        <p>I'm hosting!
+      <% else %>
+        <p>I'm attending!</p>
+      <% end %>
       <br><br>
     <% end %>
   <% end %>
