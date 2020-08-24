@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_19_002926) do
+ActiveRecord::Schema.define(version: 2020_08_23_231417) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,8 +29,7 @@ ActiveRecord::Schema.define(version: 2020_08_19_002926) do
     t.integer "duration"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "view_party_id"
-    t.index ["view_party_id"], name: "index_movies_on_view_party_id"
+    t.integer "api_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -47,7 +46,9 @@ ActiveRecord::Schema.define(version: 2020_08_19_002926) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "host_id"
+    t.bigint "movie_id"
     t.index ["host_id"], name: "index_view_parties_on_host_id"
+    t.index ["movie_id"], name: "index_view_parties_on_movie_id"
   end
 
   create_table "view_party_attendees", force: :cascade do |t|
@@ -60,7 +61,7 @@ ActiveRecord::Schema.define(version: 2020_08_19_002926) do
   end
 
   add_foreign_key "friendships", "users"
-  add_foreign_key "movies", "view_parties"
+  add_foreign_key "view_parties", "movies"
   add_foreign_key "view_party_attendees", "users"
   add_foreign_key "view_party_attendees", "view_parties"
 end

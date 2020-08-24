@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 21 Aug 2020 21:27:37 GMT
+      - Sun, 23 Aug 2020 22:03:51 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -36,122 +36,18 @@ http_interactions:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
       Last-Modified:
-      - Fri, 21 Aug 2020 21:27:37 GMT
+      - Sun, 23 Aug 2020 22:03:51 GMT
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 045f1e1f031241f3808c557a2b5d6b0a.cloudfront.net (CloudFront)
+      - 1.1 6d9f09528e589f3fa7ca05f965ea37a2.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - Bg6952zBWHcSqCM8D8MMoYvmVWzexFXpgOsrJISILO15CPp_uXpmzA==
+      - bQnaUE9HTQU5wRNh2pKAPOynXLN70MrhmdNIb5vkFj9xQKzA6jhsrQ==
     body:
       encoding: UTF-8
       string: '{"success":false,"status_code":34,"status_message":"The resource you
         requested could not be found."}'
-  recorded_at: Fri, 21 Aug 2020 21:27:37 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie//credits?api_key=<MOVIE API KEY>
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v1.0.1
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 404
-      message: Not Found
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Content-Length:
-      - '100'
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 21 Aug 2020 21:27:37 GMT
-      Server:
-      - openresty
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, HEAD, POST, PUT, DELETE, OPTIONS
-      Access-Control-Expose-Headers:
-      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
-        Content-Length, Content-Range
-      X-Cascade:
-      - pass
-      Last-Modified:
-      - Fri, 21 Aug 2020 21:27:37 GMT
-      X-Cache:
-      - Error from cloudfront
-      Via:
-      - 1.1 824a5d9ed02451bcb68b15ae5991dce0.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - DEN50-C2
-      X-Amz-Cf-Id:
-      - RHJ-4nwaT3VZxLQf7d2yLSAFa0SXFHksg3LpydasV2Dxst98M5LbSA==
-    body:
-      encoding: UTF-8
-      string: '{"success":false,"status_code":34,"status_message":"The resource you
-        requested could not be found."}'
-  recorded_at: Fri, 21 Aug 2020 21:27:37 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie//reviews?api_key=<MOVIE API KEY>
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v1.0.1
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 404
-      message: Not Found
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Content-Length:
-      - '100'
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 21 Aug 2020 21:27:37 GMT
-      Server:
-      - openresty
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, HEAD, POST, PUT, DELETE, OPTIONS
-      Access-Control-Expose-Headers:
-      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
-        Content-Length, Content-Range
-      X-Cascade:
-      - pass
-      Last-Modified:
-      - Fri, 21 Aug 2020 21:27:37 GMT
-      X-Cache:
-      - Error from cloudfront
-      Via:
-      - 1.1 6c02603f677dd5669f8ab3b41062340f.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - DEN50-C2
-      X-Amz-Cf-Id:
-      - E81JS3ia7q-X-2L5EAPryjn2BG0vi0csDa4QJo_bKMO_TNxB2RS9kA==
-    body:
-      encoding: UTF-8
-      string: '{"success":false,"status_code":34,"status_message":"The resource you
-        requested could not be found."}'
-  recorded_at: Fri, 21 Aug 2020 21:27:37 GMT
+  recorded_at: Sun, 23 Aug 2020 22:03:50 GMT
 recorded_with: VCR 6.0.0

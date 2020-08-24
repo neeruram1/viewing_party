@@ -1,34 +1,32 @@
-
-
-<%= link_to  "Add Viewing Party for Movie", "/view_party/new?q=#{@movie_result.id}", method: :get %>
+<%= link_to  "Add Viewing Party for Movie", "/view_party/new?q=#{@movie.id}", method: :get %>
 
  <h4>Title:</h4>
-  <p><%= @movie_result.title %></p>
+  <p><%= @movie.title %></p>
  <h4>Average Votes:</h4>
-  <p><%= @movie_result.vote_average %></p>
+  <p><%= @movie.vote_average %></p>
  <h4>Runtime:</h4>
-  <p><%= @movie_result.runtime %> minutes</p>
+  <p><%= @movie.runtime %> minutes</p>
  <h4>Summary:</h4>
-  <p><%= @movie_result.summary %></p>
+  <p><%= @movie.summary %></p>
 
  <section class='genres'>
    <h4>Genres:</h4>
-   <% @movie_result.genres.each do |genre| %>
-   <p><%= genre[:name] %></p>
+   <% @movie.genres_names.each do |genre_name| %>
+   <p><%= genre_name %></p>
    <% end %>
  </section>
 
  <section class='characters'>
    <h4>Actors & Characters:</h4>
-   <% @movie_result.top_cast.each_pair do |name, character| %>
-    <p>Actor/Actress: <%= name %> Character: <%= character %></p>
+   <% @movie.top_cast.each do |cast| %>
+    <p>Actor/Actress: <%= cast[:name] %> Character: <%= cast[:character] %></p>
   <% end %>
  </section>
 
  <section class='reviews'>
    <h4>Reviews:</h4>
-   <P> Number of Reviews: <%= @movie_result.reviews_count %></P>
-   <% @movie_result.reviews.each do |review| %>
+   <P> Number of Reviews: <%= @movie.reviews_count %></P>
+   <% @movie.reviews.each do |review| %>
     <p>Author: <%= review[:author] %></p>
     <p>Review: <%= review[:content] %></p>
    <% end %>

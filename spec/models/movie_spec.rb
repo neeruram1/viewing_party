@@ -7,6 +7,6 @@ RSpec.describe Movie, type: :model do
   end
 
   describe 'Relationships' do
-    it {should belong_to :view_party}
+    it {should have_many :view_parties}
   end
 end

@@ -86,4 +86,28 @@ RSpec.describe 'User dashboard page' do
       expect(page).to have_content('Viewing Parties')
     end
   end
+
+  it 'I can see parties I am attending and hosting', :vcr do
+    friend = User.create(uid: "111111", name: "Neeru Ram", email: "neeru@turing.io")
+    Friendship.create(user: @user, friend: friend)
+
+    id = 299536
+    search = SearchResults.new
+    movie_result = search.movie_details(id)
+
+    movie = Movie.create(name: movie_result.title, duration: movie_result.runtime, api_id: id)
+    party = ViewParty.create(duration: movie.duration, date: "10/20/2020", host: @user, movie: movie)
+    ViewPartyAttendee.create(user: friend, view_party: party)
+
+    party2 = ViewParty.create(duration: movie.duration, date: "10/25/2020", host: friend, movie: movie)
+    ViewPartyAttendee.create(user: @user, view_party: party2)
+
+    visit '/dashboard'
+
+    save_and_open_page
+
+    expect(page).to have_content(party.movie.name)
+    expect(page).to have_content(party2.date)
+    expect(page).to_not have_content('You have no viewing parties!')
+  end
 end

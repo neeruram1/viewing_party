@@ -1,38 +1,48 @@
 require 'rails_helper'
 
 RSpec.describe 'Movies index page' do
-  before :each do
+
+  it "I see 40 results of my search", :vcr do
+    visit '/discover'
+
+    fill_in :search, with: "Avengers"
+    click_button 'Find Movies'
+
+    expect(current_path).to eq('/movies')
+
+    expect(page).to have_content("Avengers: Infinity War")
+    expect(page).to have_content("Vote Average: 8.3")
+
+    expect(page).to have_content("The Avengers")
+    expect(page).to have_content("Vote Average: 10")
+  end
+
+  it "I see the first 40 top rated movies", :vcr do
     visit '/movies'
+    click_on 'Find Top Rated Movies'
+
+    expect(page).to have_content("Gabriel's Inferno Part II")
+    expect(page).to have_content("Vote Average: 9.1")
+    expect(page).to_not have_content("Avengers: Infinity War")
   end
 
-  it "I see the top rated movies button" do
-    expect(page).to have_link('Find Top Rated Movies')
+  it "A movie title links to the movie show page", :vcr do
+    id = 299536
+    visit '/movies'
+
+    fill_in :search, with: "Avengers"
+    click_button 'Find Movies'
+
+    click_on "Avengers: Infinity War"
+
+    expect(current_path).to eq("/movies/#{id}")
   end
 
-  it "I see the find movies form at the top of the page" do
-    expect(page).to have_button('Find Movies')
-    find_field(:search)
-  end
+  it "I see an message if there are no search results", :vcr do
+    visit '/movies'
 
-  it "I can search for a movie and I will see up to 40 results", :vcr do
-    fill_in :search, with: 'Avengers'
-    click_on 'Find Movie'
-    expect(current_path).to eq('/movies')
-
-    within '.search-results' do
-      expect(page).to have_content("Avengers: Infinity War")
-      expect(page).to have_content("Vote Average: 8.3")
-    end
-  end
-
-  it 'should show a message to the user', :vcr do
-    fill_in :search, with: 'qqwertyuiop[sdfghj'
-    click_on 'Find Movie'
-    expect(current_path).to eq('/movies')
-
-    within '.search-results' do
-      expect(page).to have_content("There was no match to the movie entered.")
-    end
-
+    fill_in :search, with: "alksjdfl;kajsdf;lkajsdf;l"
+    click_button 'Find Movies'
+    expect(page).to have_content("No movies found with that keyword.")
   end
 end
