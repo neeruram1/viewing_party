@@ -40,5 +40,6 @@ RSpec.describe 'Create Party' do
 
     expect(page).to have_content('You have created a new Viewing Party!')
     expect(page).to have_content(party.movie.name)
+    expect(page).to_not have_content('You have no viewing parties!')
   end
 end
