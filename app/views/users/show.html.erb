@@ -30,7 +30,7 @@
       <p>Movie: <%= party.movie.name %>
       <p>Date: <%= party.date %>
       <% if @user.parties_hosting.include?(party) %>
-        <p>I'm hosting!
+      <%= button_to "Add to my Google Calendar" %>
       <% else %>
         <p>I'm attending!</p>
       <% end %>
