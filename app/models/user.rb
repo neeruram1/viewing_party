@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  validates :name, presence: true
   validates :email, presence: true
   validates :uid, presence: true
 
@@ -13,8 +12,9 @@ class User < ApplicationRecord
     user.attributes =
       {
         uid: user_data[:uid],
-        name: user_data[:name],
-        email: user_data[:email]
+        email: user_data[:email],
+        access_token: user_data[:access_token],
+        refresh_token: user_data[:refresh_token]
       }
     user.save!
     user

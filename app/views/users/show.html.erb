@@ -1,4 +1,4 @@
-<h1>Welcome <%= @user.name %>!</h1>
+<h1>Welcome <%= @user.email %>!</h1>
 
 <%= button_to "Discover Movies", "/discover", method: :get %>
 
@@ -13,7 +13,6 @@
   <% if @user.friends.empty? == false %>
     <h3>My Friends</h3>
       <% @user.friends.each do |friend| %>
-        <h4>Name: <%= friend.name %></h4>
         <p>Email: <%= friend.email %></p>
       <% end %>
   <% else %>

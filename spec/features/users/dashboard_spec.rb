@@ -10,7 +10,7 @@ RSpec.describe 'User dashboard page' do
 
   it "I see a welcome message" do
     expect(current_path).to eq('/dashboard')
-    expect(page).to have_content("Welcome #{@user.name}!")
+    expect(page).to have_content("Welcome #{@user.email}!")
   end
 
   it "I see a button to Discover Movies" do
@@ -122,7 +122,7 @@ RSpec.describe 'User dashboard page' do
     ViewPartyAttendee.create(user: friend, view_party: party)
 
     visit '/dashboard'
-    
+
     expect(page).to have_button('Add to my Google Calendar')
   end
 end
