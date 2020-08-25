@@ -12,7 +12,7 @@
   <br>
   <p>Friends</p>
   <% if current_user.friends.empty? == false %>
-    <%= collection_check_boxes(:friend_ids, current_user.id, current_user.friends, :id, :name) %>
+    <%= collection_check_boxes(:friend_ids, current_user.id, current_user.friends, :id, :email) %>
   <% else %>
     <p>You currently have no friends</p>
   <% end %>

@@ -28,7 +28,7 @@ RSpec.describe 'User dashboard page' do
   end
 
   it "I can add a friend" do
-    neeru = User.create(uid: "111111", name: "Neeru Ram", email: "neeru@turing.io")
+    neeru = User.create(uid: "111111", email: "neeru@turing.io")
 
     within '.friends' do
       fill_in :email, with: neeru.email
@@ -40,7 +40,6 @@ RSpec.describe 'User dashboard page' do
 
     within '.friends' do
       expect(page).to have_content('My Friends')
-      expect(page).to have_content(neeru.name)
       expect(page).to have_content(neeru.email)
     end
   end
@@ -62,7 +61,7 @@ RSpec.describe 'User dashboard page' do
   end
 
   it "I can only add a friend once" do
-    neeru = User.create(uid: "111111", name: "Neeru Ram", email: "neeru@turing.io")
+    neeru = User.create(uid: "111111", email: "neeru@turing.io")
 
     within '.friends' do
       fill_in :email, with: neeru.email
@@ -88,7 +87,7 @@ RSpec.describe 'User dashboard page' do
   end
 
   it 'I can see parties I am attending and hosting', :vcr do
-    friend = User.create(uid: "111111", name: "Neeru Ram", email: "neeru@turing.io")
+    friend = User.create(uid: "111111", email: "neeru@turing.io")
     Friendship.create(user: @user, friend: friend)
 
     id = 299536
@@ -110,7 +109,7 @@ RSpec.describe 'User dashboard page' do
   end
 
   it "I can add the viewing parties that I have created to my google calendar", :vcr do
-    friend = User.create(uid: "111111", name: "Neeru Ram", email: "neeru@turing.io")
+    friend = User.create(uid: "111111", email: "neeru@turing.io")
     Friendship.create(user: @user, friend: friend)
 
     id = 299536
@@ -124,5 +123,8 @@ RSpec.describe 'User dashboard page' do
     visit '/dashboard'
 
     expect(page).to have_button('Add to my Google Calendar')
+    click_on 'Add to my Google Calendar'
+    expect(current_path).to eq('/dashboard')
+    expect(page).to have_content("You have successfully added this event to your calendar")
   end
 end
