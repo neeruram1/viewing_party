@@ -21,8 +21,9 @@ class SessionsController < ApplicationController
   def user_data
     {
       uid: auth_hash['uid'],
-      name: auth_hash['info']['name'],
-      email: auth_hash['info']['email']
+      email: auth_hash['info']['email'],
+      access_token: auth_hash['credentials']['token'],
+      refresh_token: auth_hash['credentials']['refresh_token']
     }
   end
 end

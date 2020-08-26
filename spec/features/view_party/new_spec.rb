@@ -31,9 +31,9 @@ RSpec.describe 'Create Party' do
   end
 
   it 'has details', :vcr do
-    friend = User.create(uid: "111111", name: "Neeru Ram", email: "neeru@turing.io")
+    friend = User.create(uid: "111111", email: "neeru@turing.io")
     Friendship.create(user: @user, friend: friend)
-    friend2 = User.create(uid: "11134211", name: "Kwibe", email: "kwibe@turing.io")
+    friend2 = User.create(uid: "11134211", email: "kwibe@turing.io")
     Friendship.create(user: @user, friend: friend2)
 
     id = 299536
@@ -49,7 +49,7 @@ RSpec.describe 'Create Party' do
     expect(page).to have_content('Avengers: Infinity War')
     expect(find_field(:duration).value).to eq('149')
 
-    expect(page).to have_content(friend.name)
-    expect(page).to have_content(friend2.name)
+    expect(page).to have_content(friend.email)
+    expect(page).to have_content(friend2.email)
   end
 end

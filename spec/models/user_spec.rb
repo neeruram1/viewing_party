@@ -17,8 +17,8 @@ RSpec.describe User, type: :model do
   describe 'Methods', :vcr do
     it "parties_hosting" do
 
-      host = User.create(uid: "111111", name: "Neeru Ram", email: "neeru@turing.io")
-      friend = User.create(uid: "11134211", name: "Kwibe", email: "kwibe@turing.io")
+      host = User.create(uid: "111111", email: "neeru@turing.io")
+      friend = User.create(uid: "11134211", email: "kwibe@turing.io")
       Friendship.create(user: host, friend: friend)
 
       id = 299536
@@ -36,8 +36,8 @@ RSpec.describe User, type: :model do
     end
 
     it "all_parties" do
-      host = User.create(uid: "111111", name: "Neeru Ram", email: "neeru@turing.io")
-      friend = User.create(uid: "11134211", name: "Kwibe", email: "kwibe@turing.io")
+      host = User.create(uid: "111111", email: "neeru@turing.io")
+      friend = User.create(uid: "11134211", email: "kwibe@turing.io")
       Friendship.create(user: host, friend: friend)
 
       id = 299536
