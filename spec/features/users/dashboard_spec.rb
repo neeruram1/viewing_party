@@ -17,12 +17,12 @@ RSpec.describe 'User dashboard page' do
   end
 
   it "I see a welcome message" do
-    user = User.create({name: 'John Doe', email: 'john@turing.io', uid: '9876543210'})
+    user = User.create({email: 'john@turing.io', uid: '9876543210'})
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
     visit dashboard_path
 
-    expect(page).to have_content("Welcome #{@user.name}!")
+    expect(page).to have_content("Welcome #{@user.email}!")
   end
 
   it "I see a button to Discover Movies" do

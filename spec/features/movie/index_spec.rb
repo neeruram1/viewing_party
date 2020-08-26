@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Movies index page' do
   before :each do
-    user = User.create({name: 'John Doe', email: 'john@gmail.com', uid: '9876543210'})
+    user = User.create({email: 'john@gmail.com', uid: '9876543210'})
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
   end

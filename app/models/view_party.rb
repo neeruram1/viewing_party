@@ -6,4 +6,5 @@ class ViewParty < ApplicationRecord
   has_many :view_party_attendees, dependent: :destroy
   has_many :users, through: :view_party_attendees
   belongs_to :movie
+  
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_25_003211) do
+ActiveRecord::Schema.define(version: 2020_08_25_190810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2020_08_25_003211) do
 
   create_table "view_parties", force: :cascade do |t|
     t.integer "duration"
-    t.date "date"
+    t.string "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "host_id"

@@ -16,9 +16,13 @@ class ViewPartyController < ApplicationController
       end
     end
 
-    CalendarService.new.create_event(party.host, party)
-
-    redirect_to '/dashboard'
-    flash[:message] = 'You have created a new Viewing Party!'
+    if party.save
+      CalendarService.new.create_event(party.host, party)
+      redirect_to '/dashboard'
+      flash[:message] = 'You have created a new Viewing Party!'
+    else
+      redirect_to new_view_party_path
+      flash[:message] = party.errors.full_messages.to_sentence
+    end
   end
 end
