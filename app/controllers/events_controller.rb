@@ -5,8 +5,16 @@ class EventsController < ApplicationController
   def create
     @user = User.find(current_user.id)
     @party = ViewParty.find(params[:party_id])
-    @calendar = create_event
-    redirect_to '/dashboard'
+
+    @event = create_event
+
+    if event.status == 'confirmed'
+      redirect_to '/dashboard'
+      flash[:message] = 'Viewing Party has been added to your Google Calendar!'
+    else
+      redirect_to '/dashboard'
+      flash[:message] = 'Oops! Something must have gone wrong.'
+    end
   end
 
   private
@@ -30,25 +38,20 @@ class EventsController < ApplicationController
   end
 
   def create_event
-    binding.pry
     service = Google::Apis::CalendarV3::CalendarService.new
     service.authorization = google_secret.to_authorization
     service.authorization.refresh!
 
-    event1 = Google::Apis::CalendarV3::Event.new({
-    'summary':"#{party.movie.name}",
-    'location':'Our living rooms!',
-    'description':'Viewing Party time!',
-    'start':{
-      'date_time': party.date,
-      'time_zone': 'America/Los_Angeles'
-    },
-    'end':{
-      'date_time': DateTime.parse('2016-05-28T17:00:00-07:00'),
-      'time_zone': 'America/Los_Angeles'
-    }
-  })
-
+    event = Google::Apis::CalendarV3::Event.new(
+      summary: "A #{@party.movie.name} Viewing Party!",
+      description: "Let's watch a movie together!",
+      start: Google::Apis::CalendarV3::EventDateTime.new(
+        date: "#{@party.date}",
+      ),
+      end: Google::Apis::CalendarV3::EventDateTime.new(
+        date: "#{@party.date}",
+      ),
+    )
     service.insert_event('primary', event)
   end
 end
