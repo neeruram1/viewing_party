@@ -1,0 +1,11 @@
+<header>
+  <nav>
+    <%= link_to 'Home', '/' %>
+
+    <% if current_user %>
+      <%= link_to 'Logout', '/logout' %>
+    <% else %>
+      <%= link_to "Login with Google", "/auth/google_oauth2" %>
+    <% end %>
+  </nav>
+</header>
