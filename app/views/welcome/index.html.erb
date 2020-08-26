@@ -2,4 +2,10 @@
 
 <h3>Set up watch parties for your favorite movies with all your friends!</h3>
 
-<%= link_to "Login with Google", "/auth/google_oauth2" %>
+<section class="authorization_btn">
+  <% if current_user %>
+      <%= button_to 'Logout', '/logout', method: :get %>
+  <% else %>
+    <%= link_to "Login with Google", "/auth/google_oauth2" %>
+  <% end %>
+</section>
