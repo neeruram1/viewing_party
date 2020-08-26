@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  def show
-    @user = User.find(current_user.id)
-  end
+  before_action :require_user
+  def show; end
 end

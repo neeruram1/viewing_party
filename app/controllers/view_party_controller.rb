@@ -1,4 +1,5 @@
 class ViewPartyController < ApplicationController
+  before_action :require_user
   def new
     movie = SearchResults.new
     @movie = movie.movie_details(params[:q])
