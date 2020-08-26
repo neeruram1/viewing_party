@@ -1,5 +1,5 @@
 class ViewParty < ApplicationRecord
-  validates :duration, presence: true
+  validates :duration, presence: true, numericality: { only_integer: true }
   validates :date, presence: true
 
   belongs_to :host, class_name: 'User'
