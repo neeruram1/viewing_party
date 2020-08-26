@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
   def authenticate
     redirect_to(root_path) if current_user.nil?
   end
+
+  def require_user
+    render file: "/public/401" unless current_user
+  end
 end

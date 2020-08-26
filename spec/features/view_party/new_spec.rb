@@ -8,6 +8,14 @@ RSpec.describe 'Create Party' do
     @user = User.last
   end
 
+  it 'returns an error page if not logged in ' do
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(nil)
+    visit new_view_party_path
+
+    expect(page).to have_content("You are not authorized to access this page")
+    expect(page).to have_content('401')
+  end
+
   it 'has a form', :vcr do
     visit new_view_party_path
 

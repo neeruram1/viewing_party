@@ -6,3 +6,4 @@ Rails.application.config.middleware.use OmniAuth::Builder do
                scope: 'userinfo.email, calendar'
            }
 end
+

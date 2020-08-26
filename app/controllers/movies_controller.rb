@@ -1,4 +1,6 @@
 class MoviesController < ApplicationController
+  before_action :require_user
+
   def index
     search_results = SearchResults.new
     if params[:search].nil? == false
