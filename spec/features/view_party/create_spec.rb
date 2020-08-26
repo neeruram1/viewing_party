@@ -10,7 +10,7 @@ RSpec.describe 'Create Party' do
 
   it 'I can create a viewing party', :vcr do
     allow_any_instance_of(CalendarService).to receive(:create_event).and_return('An event has been created')
-    
+
     friend = User.create(uid: "111111", email: "neeru@turing.io")
     Friendship.create(user: @user, friend: friend)
     friend2 = User.create(uid: "11134211", email: "kwibe@turing.io")

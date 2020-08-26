@@ -22,7 +22,7 @@ RSpec.describe 'User dashboard page' do
 
     visit dashboard_path
 
-    expect(page).to have_content("Welcome #{@user.email}!")
+    expect(page).to have_content("Welcome #{user.name}!")
   end
 
   it "I see a button to Discover Movies" do
