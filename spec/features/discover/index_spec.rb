@@ -10,7 +10,7 @@ RSpec.describe 'Discover Page' do
   end
 
   it "I see a button to discover top-rated movies", :vcr do
-    user = User.create({name: 'John Doe', email: 'john@gmail.com', uid: '9876543210'})
+    user = User.create({email: 'john@gmail.com', uid: '9876543210'})
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     visit '/discover'
 
@@ -20,7 +20,7 @@ RSpec.describe 'Discover Page' do
   end
 
   it "I see a form to search by movie keyword", :vcr do
-    user = User.create({name: 'John Doe', email: 'john@gmail.com', uid: '9876543210'})
+    user = User.create({email: 'john@gmail.com', uid: '9876543210'})
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     visit '/discover'
 

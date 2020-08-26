@@ -1,15 +1,13 @@
 
-<%= render 'partials/navbar' %>
 
+<%= render 'partials/navbar' %>
 <% if current_user.name %>
   <h1>Welcome <%= current_user.name %>!</h1>
 <% else %>
   <h1>Welcome <%= current_user.email %>!</h1>
 <% end %>
 
-
 <%= button_to "Discover Movies", "/discover", method: :get %>
-
 
 <section class='friends'>
   <h2>Friends</h2>
@@ -22,7 +20,6 @@
   <% if current_user.friends.size > 0 %>
     <h3>My Friends</h3>
       <% current_user.friends.each do |friend| %>
-        <h4>Name: <%= friend.name %></h4>
         <p>Email: <%= friend.email %></p>
       <% end %>
   <% else %>

@@ -140,4 +140,18 @@ RSpec.describe 'User dashboard page' do
 
     expect(page).to have_button('Add to my Google Calendar')
   end
+
+  it 'I cannot add myself as a friend' do
+    within '.friends' do
+      fill_in :email, with: @user.email
+      click_on 'Add Friend'
+    end
+
+    expect(current_path).to eq(dashboard_path)
+    expect(page).to have_content("Friend cannot refer back to yourself")
+
+    within ".friends" do
+      expect(page).to have_content("You currently have no friends")
+    end
+  end
 end
