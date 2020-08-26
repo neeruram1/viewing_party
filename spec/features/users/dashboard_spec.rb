@@ -8,8 +8,20 @@ RSpec.describe 'User dashboard page' do
     @user = User.last
   end
 
+  it 'returns an error page if not logged in ' do
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(nil)
+    visit dashboard_path
+
+    expect(page).to have_content("You are not authorized to access this page")
+    expect(page).to have_content('401')
+  end
+
   it "I see a welcome message" do
-    expect(current_path).to eq('/dashboard')
+    user = User.create({name: 'John Doe', email: 'john@turing.io', uid: '9876543210'})
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+    visit dashboard_path
+
     expect(page).to have_content("Welcome #{@user.name}!")
   end
 
@@ -103,8 +115,6 @@ RSpec.describe 'User dashboard page' do
     ViewPartyAttendee.create(user: @user, view_party: party2)
 
     visit '/dashboard'
-
-    save_and_open_page
 
     expect(page).to have_content(party.movie.name)
     expect(page).to have_content(party2.date)

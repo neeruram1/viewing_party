@@ -2,6 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'movie show page' do
   it "Should have all the details for the movie", :vcr do
+    user = User.create({name: 'John Doe', email: 'john@gmail.com', uid: '9876543210'})
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
     id = 299536
     search = SearchResults.new
     movie = search.movie_details(id)
