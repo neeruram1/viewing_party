@@ -5,6 +5,13 @@ class SessionsController < ApplicationController
     redirect_to '/dashboard'
   end
 
+  def destroy
+    session[:user_id] = nil
+    flash[:notice] = "User Logged out successfully"
+
+    redirect_to '/'
+  end
+
   private
 
   def auth_hash
