@@ -1,9 +1,9 @@
 <h1>Viewing Party Details:</h1>
-<h2><span>Movie Title: </span><%= @movie.title %></h2>
+<h2><span>Movie Title: </span><%= @movie.name %></h2>
 
-<%= form_tag "/view_party?movie_id=#{@movie.id}&movie_name=#{@movie.title}" do %>
+<%= form_tag "/view_party?movie_id=#{@movie.id}&movie_name=#{@movie.name}" do %>
   <%= label_tag :duration, "Duration of Party in minutes" %>
-  <%= text_field_tag :duration, "#{@movie.runtime}" %>
+  <%= text_field_tag :duration, "#{@movie.duration}" %>
   <br>
   <br>
   <%= label_tag :date, "When" %>
