@@ -1,4 +1,4 @@
-<h1>Welcome <%= @user.name %>!</h1>
+<h1>Welcome <%= current_user.name %>!</h1>
 
 <%= button_to "Discover Movies", "/discover", method: :get %>
 
@@ -10,9 +10,9 @@
   <% end %>
   <br>
 
-  <% if @user.friends.empty? == false %>
+  <% if current_user.friends.size > 0 %>
     <h3>My Friends</h3>
-      <% @user.friends.each do |friend| %>
+      <% current_user.friends.each do |friend| %>
         <h4>Name: <%= friend.name %></h4>
         <p>Email: <%= friend.email %></p>
       <% end %>
@@ -23,13 +23,13 @@
 
 <section class='viewing-parties'>
   <h2>Viewing Parties</h2>
-  <% if @user.all_parties.empty? %>
+  <% if current_user.all_parties.empty? %>
     <p>You have no viewing parties!</p>
   <% else %>
-    <% @user.all_parties.each do |party| %>
+    <% current_user.all_parties.each do |party| %>
       <p>Movie: <%= party.movie.name %>
       <p>Date: <%= party.date %>
-      <% if @user.parties_hosting.include?(party) %>
+      <% if current_user.parties_hosting.include?(party) %>
         <p>I'm hosting!
       <% else %>
         <p>I'm attending!</p>
