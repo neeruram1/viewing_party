@@ -20,3 +20,4 @@
 /coverage/*
 
 /config/application.yml
+/config/client_secret.json
