@@ -40,7 +40,7 @@ RSpec.describe 'User dashboard page' do
   end
 
   it "I can add a friend" do
-    neeru = User.create(uid: "111111", name: "Neeru Ram", email: "neeru@turing.io")
+    neeru = User.create(uid: "111111", email: "neeru@turing.io")
 
     within '.friends' do
       fill_in :email, with: neeru.email
@@ -52,7 +52,6 @@ RSpec.describe 'User dashboard page' do
 
     within '.friends' do
       expect(page).to have_content('My Friends')
-      expect(page).to have_content(neeru.name)
       expect(page).to have_content(neeru.email)
     end
   end
@@ -74,7 +73,7 @@ RSpec.describe 'User dashboard page' do
   end
 
   it "I can only add a friend once" do
-    neeru = User.create(uid: "111111", name: "Neeru Ram", email: "neeru@turing.io")
+    neeru = User.create(uid: "111111", email: "neeru@turing.io")
 
     within '.friends' do
       fill_in :email, with: neeru.email
@@ -100,7 +99,7 @@ RSpec.describe 'User dashboard page' do
   end
 
   it 'I can see parties I am attending and hosting', :vcr do
-    friend = User.create(uid: "111111", name: "Neeru Ram", email: "neeru@turing.io")
+    friend = User.create(uid: "111111", email: "neeru@turing.io")
     Friendship.create(user: @user, friend: friend)
 
     id = 299536
@@ -119,5 +118,26 @@ RSpec.describe 'User dashboard page' do
     expect(page).to have_content(party.movie.name)
     expect(page).to have_content(party2.date)
     expect(page).to_not have_content('You have no viewing parties!')
+  end
+
+  it "I can add the viewing parties that I am attending to my google calendar", :vcr do
+    friend = User.create(uid: "111111", email: "neeru@turing.io")
+    Friendship.create(user: @user, friend: friend)
+
+    id = 299536
+    search = SearchResults.new
+    movie_result = search.movie_details(id)
+
+    movie = Movie.create(name: movie_result.title, duration: movie_result.runtime, api_id: id)
+    party = ViewParty.create(duration: movie.duration, date: "10/20/2020", host: friend, movie: movie)
+    ViewPartyAttendee.create(user: @user, view_party: party)
+
+    movie2 = Movie.create(name: 'Lord of the Rings: Return of the King', duration: "112", api_id: 234535)
+    party2 = ViewParty.create(duration: movie2.duration, date: "10/20/2020", host: @user, movie: movie2)
+    ViewPartyAttendee.create(user: friend, view_party: party2)
+
+    visit '/dashboard'
+
+    expect(page).to have_button('Add to my Google Calendar')
   end
 end
