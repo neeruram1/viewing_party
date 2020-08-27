@@ -15,7 +15,6 @@ class CalendarService
   end
 
   def create_event(user, party)
-    binding.pry
     service = Google::Apis::CalendarV3::CalendarService.new
     service.authorization = google_secret(user).to_authorization
     service.authorization.refresh!

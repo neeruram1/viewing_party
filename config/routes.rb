@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
   get '/auth/failure', to: redirect('/')
-  resources :movies, only: [:show, :index]
+  resources :movies, only: [:show]
   resources :view_party, only: [:new, :create]
   resources :friendship, only: [:create]
   resources :events, only: [:create]

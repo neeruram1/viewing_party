@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Tue, 25 Aug 2020 03:05:08 GMT
+      - Thu, 27 Aug 2020 01:43:44 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -36,18 +36,18 @@ http_interactions:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
       Last-Modified:
-      - Tue, 25 Aug 2020 03:05:08 GMT
+      - Thu, 27 Aug 2020 01:43:44 GMT
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 ed8294655bb258e13bfb027c25483ddb.cloudfront.net (CloudFront)
+      - 1.1 e1b5abb53c407f0a057625c46693461d.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - nmpAaY8liWb1TTCHg2iTtsYaQhUXJzftGAwUGzNUlt3Ofh5l_YIBwQ==
+      - b_2c2_HRw9Ceg5uo29weI09MSrCfh2TSUIhggd7dIXQ_GUceXdqblg==
     body:
       encoding: UTF-8
       string: '{"success":false,"status_code":34,"status_message":"The resource you
         requested could not be found."}'
-  recorded_at: Tue, 25 Aug 2020 03:05:08 GMT
+  recorded_at: Thu, 27 Aug 2020 01:43:43 GMT
 recorded_with: VCR 6.0.0

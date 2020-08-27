@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Mon, 24 Aug 2020 21:06:08 GMT
+      - Wed, 26 Aug 2020 23:15:02 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,25 +42,25 @@ http_interactions:
       X-Memc-Key:
       - f17c22d5dc3a9cb96691389caeb24581
       X-Memc-Age:
-      - '14127'
+      - '7390'
       X-Memc-Expires:
-      - '7473'
+      - '14210'
       Etag:
-      - W/"1089d3f85323766a842fcfe21852f791"
+      - W/"f8c693819aacf0371af379153922fe8b"
       Last-Modified:
-      - Mon, 24 Aug 2020 21:06:08 GMT
+      - Wed, 26 Aug 2020 23:15:01 GMT
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 e158a5cd644f102abc630a9f56b59d78.cloudfront.net (CloudFront)
+      - 1.1 4b2d2d4c49521bf403522140b78283a1.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - hc3MuOunmWyCrEL67hIGnyX4nLNWj1Icht3jmlf_YnuRstw9-38xYw==
+      - 1ckemN0VZJ8yTxjNANlt6hHDAlIGSXmxo8XadKMDdnPzDFaFY3ggJw==
       Age:
-      - '21541'
+      - '8923'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/bOGkgRGdhrBYJSLpXaxhXVstddV.jpg","belongs_to_collection":{"id":86311,"name":"The
@@ -72,9 +72,9 @@ http_interactions:
         infamy, his goal is to collect all six Infinity Stones, artifacts of unimaginable
         power, and use them to inflict his twisted will on all of reality. Everything
         the Avengers have fought for has led up to this moment - the fate of Earth
-        and existence itself has never been more uncertain.","popularity":103.327,"poster_path":"/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg","production_companies":[{"id":420,"logo_path":"/hUzeosd33nzE5MCNsZxCGEKTXaQ.png","name":"Marvel
+        and existence itself has never been more uncertain.","popularity":107.195,"poster_path":"/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg","production_companies":[{"id":420,"logo_path":"/hUzeosd33nzE5MCNsZxCGEKTXaQ.png","name":"Marvel
         Studios","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"2018-04-25","revenue":2046239637,"runtime":149,"spoken_languages":[{"iso_639_1":"en","name":"English"},{"iso_639_1":"xh","name":""}],"status":"Released","tagline":"An
-        entire universe. Once and for all.","title":"Avengers: Infinity War","video":false,"vote_average":8.3,"vote_count":19404}'
-  recorded_at: Tue, 25 Aug 2020 03:05:09 GMT
+        entire universe. Once and for all.","title":"Avengers: Infinity War","video":false,"vote_average":8.3,"vote_count":19427}'
+  recorded_at: Thu, 27 Aug 2020 01:43:44 GMT
 recorded_with: VCR 6.0.0
