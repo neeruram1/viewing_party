@@ -4,7 +4,7 @@ class MovieService
   end
 
   def top_rated_movies
-    to_json("movie/top_rated?")
+    to_json('movie/top_rated?')
   end
 
   def movie_data(movie_id)
@@ -19,7 +19,7 @@ class MovieService
     to_json("movie/#{movie_id}/reviews")
   end
 
-private
+  private
 
   def conn
     Faraday.new('https://api.themoviedb.org/3/') do |f|

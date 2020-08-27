@@ -11,7 +11,7 @@ class ViewPartyController < ApplicationController
 
     if friends[1].nil?
       redirect_to new_view_party_path
-      flash[:message] = "Please select a friend for this viewing party"
+      flash[:message] = 'Please select a friend for this viewing party'
     else
       movie = Movie.find(params[:movie_id])
       party = ViewParty.create(duration: params[:duration], date: params[:date], host: current_user, movie: movie)

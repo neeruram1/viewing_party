@@ -18,11 +18,11 @@ class SearchResults
   end
 
   def cast(movie_id)
-  service.cast(movie_id)
+    service.cast(movie_id)
   end
 
   def reviews(movie_id)
-  service.reviews(movie_id)
+    service.reviews(movie_id)
   end
 
   private

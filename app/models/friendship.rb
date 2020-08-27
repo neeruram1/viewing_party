@@ -1,7 +1,7 @@
 class Friendship < ApplicationRecord
   belongs_to :user
   belongs_to :friend, class_name: 'User'
-  validates_uniqueness_of :friend, scope: :user, message: "This friend has already been added"
+  validates_uniqueness_of :friend, scope: :user, message: 'This friend has already been added'
   validate :disallow_self_referential_friendship
 
   def disallow_self_referential_friendship

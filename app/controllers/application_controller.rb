@@ -11,6 +11,6 @@ class ApplicationController < ActionController::Base
   end
 
   def require_user
-    render file: "/public/401" unless current_user
+    render file: '/public/401' unless current_user
   end
 end
