@@ -9,7 +9,7 @@
 MOVIE_API: "b4fbcf4d435e94a935aa089b7a3cfcf7"
 movie_api_read_access_token: eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiNGZiY2Y0ZDQzNWU5NGE5MzVhYTA4OWI3YTNjZmNmNyIsInN1YiI6IjVmM2IzMDMxMWZiOTRmMDAzNmFiZDBhNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.wO-TXqn2T4lrASIzDKNq3mMGKduV4sYGzSRTA__v3ag
 
-GOOGLE_CLIENT_ID: "1020502748600-2gjve8osr4co7q52ueiijltl3fmai2li.apps.googleusercontent.com"
-GOOGLE_CLIENT_SECRET: "ZeQIa-hzIGHQ_xFRCwapwHv1"
+GOOGLE_CLIENT_ID: "678468045098-hqcl14qj13s6k4m9misqch8smhnrssgc.apps.googleusercontent.com"
+GOOGLE_CLIENT_SECRET: "tCk8mdY99aFtDqe_mwAyjzcH"
 
 # Ex req: https://api.themoviedb.org/3/movie/550?4a935aa089api_key=b4fbcf4d435e9b7a3cfcf7

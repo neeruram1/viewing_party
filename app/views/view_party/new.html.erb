@@ -3,7 +3,7 @@
 <h1>Viewing Party Details:</h1>
 <h2><span>Movie Title: </span><%= @movie.name %></h2>
 
-<%= form_tag "/view_party?movie_id=#{@movie.id}&movie_name=#{@movie.name}" do %>
+<%= form_tag "/view_party" do %>
   <%= label_tag :duration, "Duration of Party in minutes" %>
   <%= text_field_tag :duration, "#{@movie.duration}" %>
   <br>
@@ -18,6 +18,10 @@
   <% else %>
     <p>You currently have no friends</p>
   <% end %>
+
+  <%= hidden_field_tag :movie_id, @movie.id %>
+  <%= hidden_field_tag :movie_name, @movie.name %>
+
   <%= submit_tag "Create Party" %>
 <% end %>
 <br><br>
