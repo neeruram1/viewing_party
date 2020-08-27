@@ -6,7 +6,7 @@ class EventsController < ApplicationController
     @user = User.find(current_user.id)
     @party = ViewParty.find(params[:party_id])
 
-    @event = CalendarService.new.create_event(@user, @party)
+    event = CalendarService.new.create_event(@user, @party)
 
     if event.status == 'confirmed'
       redirect_to '/dashboard'
