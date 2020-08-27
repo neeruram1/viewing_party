@@ -1,0 +1,8 @@
+    <% if movies.empty? %>
+      <h3> No movies found with that keyword.</h3>
+    <% else %>
+      <% movies.each do |movie| %>
+        <p><%= link_to movie.title, "/movies/#{movie.id}" %></p>
+        <p>Vote Average: <%= movie.vote_average %></p>
+      <% end %>
+    <% end %>

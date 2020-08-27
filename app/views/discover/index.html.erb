@@ -1,8 +1,10 @@
 <%= render 'partials/navbar' %>
-<%= link_to "Find Top Rated Movies","/movies?q=toprated", method: :get %>
+  <%= link_to "Find Top Rated Movies","/discover?q=toprated", remote: true, method: :get %>
 <br>
 
-<%= form_tag '/movies', method: :get do %>
-  <%= search_field_tag :search,nil, placeholder: "Search by movie title" %>
+<%= form_tag '/discover', remote: true, method: :get do %>
+  <%= search_field_tag :search, nil, placeholder: "Search by movie title" %>
   <%= submit_tag "Find Movies" %>
 <% end %>
+
+<div id='movie-results'></div>

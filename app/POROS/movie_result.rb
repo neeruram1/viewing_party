@@ -17,7 +17,7 @@ class MovieResult
 
   def top_cast
     cast = search.cast(@id)
-    top_cast = cast[:cast].first(10)
+    cast[:cast].first(10)
   end
 
   def genres_names

@@ -44,6 +44,9 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    apparition (0.6.0)
+      capybara (~> 3.13, < 4)
+      websocket-driver (>= 0.6.5)
     arel (9.0.0)
     ast (2.4.1)
     bindex (0.8.1)
@@ -322,6 +325,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  apparition
   bootsnap
   capybara
   chronic
